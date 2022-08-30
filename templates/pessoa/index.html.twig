@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Pessoas{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Lista de Pessoas</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for pessoa in pessoas %}
+                <tr>
+                    <td>{{ pessoa.id }}</td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>
+                        <a href="{{ path('app_pessoa_show', {'id': pessoa.id}) }}" class="mdi mdi-eye"></a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_pessoa_edit', {'id': pessoa.id}) }}" class="mdi mdi-pencil-circle"></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a id="btnNovaPessoa" href="{{ path('app_pessoa_new') }}" class="btn btn-primary">Nova Pessoa</a>
+    </div>
+{% endblock %}

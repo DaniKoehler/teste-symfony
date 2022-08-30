@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar: {{ pessoa.nome }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Editar: {{ pessoa.nome }}</h1>
+
+    {{ include('pessoa/_form.html.twig', {'button_label': 'Atualizar'}) }}
+
+    <a id="btnVoltarLista" href="{{ path('app_pessoa_index') }}" class="btn btn-primary">Voltar a Lista</a>
+
+    </div>
+{% endblock %}

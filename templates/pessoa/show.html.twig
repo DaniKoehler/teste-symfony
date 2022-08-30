@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detalhes de: {{ pessoa.nome }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Detalhes de: {{ pessoa.nome }}</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <td>{{ pessoa.id }}</td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ include('pessoa/_delete_form.html.twig') }}
+                    <td><a href="{{ path('app_pessoa_edit', {'id': pessoa.id}) }}" class="btn btn-primary">Editar</a>
+                </tr>
+            </tbody>
+        </table>
+
+        <a id="btnVoltarLista" href="{{ path('app_pessoa_index') }}" class="btn btn-primary">Voltar a Lista</a>
+    </div>
+{% endblock %}

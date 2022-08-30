@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sorteio{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Sorteio de Números</h1>
+        <form>
+            <div class="input-group mb-3">
+                <input id="num1" name="num1" type="number" placeholder="Digite o número mínimo." class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <input id="num2" name="num2" type="number" placeholder="Digite o número máximo." class="form-control">
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button id="btnSorteio" name="btnSorteio" class="btn btn-primary btn-lg">SORTEAR</button>
+            </div>
+            <div id="numSorteado">
+                <p><h3>O número sorteado foi: <b id="numSort"></b></h3></p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
